@@ -10,7 +10,270 @@
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --text-color: #333;
+        --background-start: #f8f9fa;
+        --background-end: #e9ecef;
+        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --hover-transition: all 0.3s ease;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+        margin: 0;
+        padding: 40px 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .name {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.5em;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        text-align: center;
+        letter-spacing: 0.5px;
+      }
+
+      h2 {
+        font-family: 'Poppins', sans-serif;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 10px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+
+      a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        transition: var(--hover-transition);
+      }
+
+      a:hover {
+        color: #2980b9;
+        text-decoration: underline;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: var(--card-shadow);
+        padding: 25px;
+        margin-bottom: 30px;
+        transition: var(--hover-transition);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        align-items: flex-start;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .image-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        flex-shrink: 0;
+        width: 140px;
+      }
+
+      .image-container img {
+        width: 140px;
+        height: 140px;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: var(--hover-transition);
+        box-shadow: var(--card-shadow);
+        margin: 0;
+        display: block;
+        background-color: white;
+      }
+
+      .image-container img:nth-child(2) {
+        width: 140px;
+        height: 140px;
+        object-fit: contain;
+        background-color: white;
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        margin: 0;
+        backdrop-filter: blur(10px);
+      }
+
+      .card-content {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .project-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.4em;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      .section {
+        margin-bottom: 15px;
+        line-height: 1.7;
+      }
+
+      /* Solid color variants for cards */
+      .card.red { 
+        background-color: #fff5f5; 
+        border-left: 4px solid #ff6b6b; 
+      }
+      .card.yellow { 
+        background-color: #fff9db; 
+        border-left: 4px solid #ffd43b; 
+      }
+      .card.blue { 
+        background-color: #e7f5ff; 
+        border-left: 4px solid #339af0; 
+      }
+      .card.green { 
+        background-color: #ebfbee; 
+        border-left: 4px solid #40c057; 
+      }
+      .card.purple { 
+        background-color: #f3f0ff; 
+        border-left: 4px solid #7950f2; 
+      }
+      .card.orange { 
+        background-color: #fff4e6; 
+        border-left: 4px solid #ff922b; 
+      }
+      .card.brown { 
+        background-color: #f8f9fa; 
+        border-left: 4px solid #495057; 
+      }
+      .card.teal { 
+        background-color: #e6fcf5; 
+        border-left: 4px solid #12b886; 
+      }
+
+      /* Image container with solid background */
+      .image-container img {
+        background-color: white;
+        box-shadow: var(--card-shadow);
+      }
+
+      .image-container img:nth-child(2) {
+        background-color: white;
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      /* Navigation links styling */
+      .nav-links {
+        text-align: center;
+        margin: 30px 0;
+        padding: 15px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links a {
+        display: inline-block;
+        padding: 8px 15px;
+        margin: 5px;
+        border-radius: 20px;
+        background-color: white;
+        color: var(--primary-color);
+        font-weight: 500;
+        transition: var(--hover-transition);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+
+      .nav-links i {
+        margin-right: 5px;
+        color: var(--secondary-color);
+      }
+
+      .nav-links a:hover i {
+        color: white;
+      }
+
+      /* Skills tags with updated styling */
+      .skills-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .skill-tag {
+        background-color: rgba(52, 152, 219, 0.1);
+        color: var(--secondary-color);
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.9em;
+        font-weight: 500;
+        transition: var(--hover-transition);
+      }
+
+      .skill-tag:hover {
+        background-color: rgba(52, 152, 219, 0.2);
+        transform: translateY(-1px);
+      }
+
+      /* Achievements and highlights */
+      .highlight {
+        background-color: rgba(52, 152, 219, 0.1);
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin: 10px 0;
+      }
+
+      .highlight i {
+        color: var(--secondary-color);
+        margin-right: 8px;
+      }
+
+      /* Publication card specific styles */
+      .card.green .image-container {
+        gap: 20px;
+      }
+
+      .card.green .image-container img {
+        width: 160px;
+        height: 160px;
+      }
+
+      .card.green .image-container img:nth-child(2) {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+    </style>
   </head>
 
   <body>
@@ -37,17 +300,17 @@
               </td>
             </tr>
           </tbody></table>
-          <p style="text-align:center">
-            <a href="mailto:jayendran.ravindran@gmail.com">Email</a> &nbsp;/&nbsp;
-            <a href="data/Jayendran Ravindran (Resume).pdf">Resume</a> &nbsp;/&nbsp;
-            <a href="https://www.linkedin.com/in/jayendran-r/">LinkedIn</a> &nbsp;/&nbsp;
-            <a href="https://www.tinyurl.com/Jay1Slider">One-slider</a> &nbsp;/&nbsp;
-            <a href="https://public.tableau.com/app/profile/jayendran.r/vizzes">Tableau</a> &nbsp;/&nbsp;
-            <a href="https://scholar.google.com/citations?user=H9P7ZvcAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
-            <a href="https://jayendranravindran.substack.com/">Substack</a> &nbsp;/&nbsp;
-            <a href="https://medium.com/@jayendran">Medium</a> &nbsp;/&nbsp;
-		  <a href="https://linktr.ee/JayendranR">Linktree</a>
-          </p>
+          <div class="nav-links">
+            <a href="mailto:jayendran.ravindran@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="data/Jayendran Ravindran (Resume).pdf"><i class="fas fa-file-alt"></i> Resume</a>
+            <a href="https://www.linkedin.com/in/jayendran-r/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://www.tinyurl.com/Jay1Slider"><i class="fas fa-file-powerpoint"></i> One-slider</a>
+            <a href="https://public.tableau.com/app/profile/jayendran.r/vizzes"><i class="fas fa-chart-bar"></i> Tableau</a>
+            <a href="https://scholar.google.com/citations?user=H9P7ZvcAAAAJ&hl=en"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://jayendranravindran.substack.com/"><i class="fas fa-newspaper"></i> Substack</a>
+            <a href="https://medium.com/@jayendran"><i class="fab fa-medium"></i> Medium</a>
+            <a href="https://linktr.ee/JayendranR"><i class="fas fa-link"></i> Linktree</a>
+          </div>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
@@ -82,6 +345,7 @@
       width: 120px;
       height: 120px;
       border-radius: 10px;
+      object-fit: cover;
     }
     .card-content {
       flex: 1;
@@ -98,10 +362,25 @@
       font-weight: bold;
       display: inline-block;
     }
-	   .card img:nth-of-type(2) {
-  object-fit: contain;
-  background-color: #f0f0f0; /* optional: add background to see full bounds */
-}
+
+    /* New image container styles */
+    .image-container {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .image-container img {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    
+    .image-container img:nth-child(2) {
+      object-fit: contain;
+      background-color: #f5f5f5;
+    }
 
     /* Different background colors */
     .card.red { background-color: #FFCCCC; }
@@ -123,7 +402,7 @@
     </style>
 
     <div class="card red">
-    <img src="images/Tesla Logo.png" alt="Project Image">
+    <img src="images/Tesla Logo.png" alt="Tesla Logo">
     <div class="card-content">
       <div class="project-title">Process Development Engineer<span style="font-weight: normal;">, Cell manufacturing</span></div>
       <div class="section"><span>Tesla Giga Factory</span>, Austin, TX</div>
@@ -132,7 +411,7 @@
   </div>
 
   <div class="card yellow">
-    <img src="images/Jk Tyre.png" alt="Project Image">
+    <img src="images/Jk Tyre.png" alt="JK Tyre Logo">
     <div class="card-content">
       <div class="project-title">Industrial Engineer</div>
       <div class="section"><span>JK Tyre & Industries Ltd.</span>, Chennai, India</div>
@@ -142,21 +421,40 @@
         <ul>
           <li><span style="font-weight: bold;">Project: </span>Installation of battery charging station in warehouse.<br> 
           <span style="font-weight: bold;">Impact: </span><span style="color: #DC143C;">&#9660;</span>60% in forklift downtime; 
-          <span style="color: 	#228B22;">&#9650;</span>180K in annual dispatch value.<br>
-          <span style="font-weight: bold;">Skills:</span> Layout design (AutoCAD), Material flow analysis(Spaghetti diagram), Cross-functional collaboration.</li><hr>
+          <span style="color: 	#228B22;">&#9650;</span>180K in annual dispatch value.</li>
+          <div class="skills-tags">
+            <span class="skill-tag">Layout Design</span>
+            <span class="skill-tag">AutoCAD</span>
+            <span class="skill-tag">Material Flow Analysis</span>
+            <span class="skill-tag">Spaghetti Diagram</span>
+            <span class="skill-tag">Cross-functional Collaboration</span>
+          </div>
+          <hr>
           <li><span style="font-weight: bold;">Project: </span>Debottlenecking of truck tire assembly line.<br> 
-            <span style="font-weight: bold;">Impact: </span><span style="color: 	#228B22;">&#9650;</span>45% in bottleneck machine capacity; Saved $12K in CapEx & $13K in OpEx.<br>
-            <span style="font-weight: bold;">Skills:</span> Value stream mapping(VSM), Root cause analysis(RCA), PDCA, Kaizen, Jigs & Fixtures.</li><hr> 
-            <li><span style="font-weight: bold;">Project: </span>Optimization of daily labor utilization.<br> 
-              <span style="font-weight: bold;">Impact: </span> </span><span style="color: #DC143C;">&#9660;</span>14% in LHPU; Saved $700K in annual labor cost.<br>
-              <span style="font-weight: bold;">Skills:</span> Time & motion studies, Line balancing, Cycle time-based headcount allocation.</li><hr> 
+          <span style="font-weight: bold;">Impact: </span><span style="color: 	#228B22;">&#9650;</span>45% in bottleneck machine capacity; Saved $12K in CapEx & $13K in OpEx.</li>
+          <div class="skills-tags">
+            <span class="skill-tag">Value Stream Mapping</span>
+            <span class="skill-tag">Root Cause Analysis</span>
+            <span class="skill-tag">PDCA</span>
+            <span class="skill-tag">Kaizen</span>
+            <span class="skill-tag">Jigs & Fixtures</span>
+          </div>
+          <hr>
+          <li><span style="font-weight: bold;">Project: </span>Optimization of daily labor utilization.<br> 
+          <span style="font-weight: bold;">Impact: </span><span style="color: #DC143C;">&#9660;</span>14% in LHPU; Saved $700K in annual labor cost.</li>
+          <div class="skills-tags">
+            <span class="skill-tag">Time & Motion Studies</span>
+            <span class="skill-tag">Line Balancing</span>
+            <span class="skill-tag">Cycle Time Analysis</span>
+            <span class="skill-tag">Headcount Optimization</span>
+          </div>
         </ul>
       </p>
     </div>
   </div>
 
   <div class="card yellow">
-    <img src="images/Jk Tyre.png" alt="Project Image">
+    <img src="images/Jk Tyre.png" alt="JK Tyre Logo">
     <div class="card-content">
       <div class="project-title">Manufacturing Engineer</div>
       <div class="section"><span>JK Tyre & Industries Ltd.</span>, Chennai, India</div>
@@ -164,14 +462,28 @@
       <p> 
         <ul>
           <li><span style="font-weight: bold;">Project: </span>Production ramp-up of radial tire production.<br> 
-                <span style="font-weight: bold;">Impact: </span> <span style="color: 	#228B22;">&#9650;</span>2.3% in tire building capacity; Ramped up by 400 units/day.<br>
-                <span style="font-weight: bold;">Skills:</span> Capacity planning, Time & motion studies, SMEDs.</li><hr>
-                <li><span style="font-weight: bold;">Project: </span>Automated KPI Dashboard (OEE, LHPU, Scrap Rate).<br> 
-                  <span style="font-weight: bold;">Impact: </span> </span><span style="color: #DC143C;">&#9660;</span>50% in manual processing time.<br>
-                  <span style="font-weight: bold;">Skills:</span> Power BI, Excel VBA.</li><hr>
-                  <li><span style="font-weight: bold;">Project: </span>Safety Improvement Circle Leader (5 associates & trainees)<br> 
-                    <span style="font-weight: bold;">Impact: </span> Installed pedestrian warning system for pedestrians; Eliminated collision hazards.<br>
-                    <span style="font-weight: bold;">Skills:</span> Teamwork, Leadership, Project Management.</li><hr>  
+          <span style="font-weight: bold;">Impact: </span><span style="color: 	#228B22;">&#9650;</span>2.3% in tire building capacity; Ramped up by 400 units/day.</li>
+          <div class="skills-tags">
+            <span class="skill-tag">Capacity Planning</span>
+            <span class="skill-tag">Time & Motion Studies</span>
+            <span class="skill-tag">SMED</span>
+          </div>
+          <hr>
+          <li><span style="font-weight: bold;">Project: </span>Automated KPI Dashboard (OEE, LHPU, Scrap Rate).<br> 
+          <span style="font-weight: bold;">Impact: </span><span style="color: #DC143C;">&#9660;</span>50% in manual processing time.</li>
+          <div class="skills-tags">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Excel VBA</span>
+            <span class="skill-tag">Data Visualization</span>
+          </div>
+          <hr>
+          <li><span style="font-weight: bold;">Project: </span>Safety Improvement Circle Leader (5 associates & trainees)<br> 
+          <span style="font-weight: bold;">Impact: </span>Installed pedestrian warning system; Eliminated collision hazards.</li>
+          <div class="skills-tags">
+            <span class="skill-tag">Team Leadership</span>
+            <span class="skill-tag">Safety Management</span>
+            <span class="skill-tag">Project Management</span>
+          </div>
         </ul>
       </p>
     </div>
@@ -187,20 +499,31 @@
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     
       <div class="card blue">
-        <img src="images/ML-Bike.jpg" alt="Project Image">
+        <img src="images/ML-Bike.jpg" alt="ML Project Image">
         <div class="card-content">
-          <div class="project-title">Predictive ML model for rental bike demand of Seoul city<br><span style="font-weight: normal;">(Course project)</span></div>
+          <div class="project-title">Predictive ML model for rental bike demand of Seoul city</div>
           <div class="section"><em>August 2024 - December 2024</em></div>
-          <a href="data/ML.pdf">Presentation</a> / 
-          <a href="https://github.com/JayendranR/RentalBikeDemand">Code</a></p>
-          <p><span style="font-weight: bold;">Impact: </span> <span style="color: #DC143C;">&#9660;</span>50% in Root Mean Square Error (RMSE); Improved accuracy.<br>
-            <span style="font-weight: bold;">Skills:</span> Machine Learning (Regression, Random Forest, GAM, Decision Tree), Python (Pandas, Matplotlib, NumPy, SciKit-Learn).</p>
+          <p><span style="font-weight: bold;">Impact: </span><span style="color: #DC143C;">&#9660;</span>50% in Root Mean Square Error (RMSE)</p>
+          <div class="skills-tags">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Regression</span>
+            <span class="skill-tag">Random Forest</span>
+            <span class="skill-tag">GAM</span>
+            <span class="skill-tag">Decision Tree</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">SciKit-Learn</span>
+          </div>
         </div>
       </div>
 
       <div class="card blue">
-   <img src="images/Wheelchair.jpg" alt="Project Image 1">
-  <img src="images/Siemens.png" alt="Project Image 2">
+        <div class="image-container">
+          <img src="images/Wheelchair.jpg" alt="Wheelchair Project Image">
+          <img src="images/Siemens.png" alt="Siemens Logo">
+        </div>
         <div class="card-content">
           <div class="project-title">
             Convertible wheelchair with assist-free transfer support<br>
@@ -217,15 +540,21 @@
             <a href="https://cedinitt.com/">Centre for Entrepreneurship Development and Incubation (CEDI)</a>, NIT-T.
           </div>
           <p><strong>Guide:</strong> <a href="https://scholar.google.co.in/citations?user=StT_wQIAAAAJ&hl=en">Dr.-Ing Muthukannan Duraiselvam</a>, Department of Production Engineering, NIT-T.</p>
-            <p> <span style="font-weight: bold;">Impact:</span> Eliminated the need for external assistance.<br>
-            <strong>Skills:</strong> 3D CAD (SolidWorks, Siemens NX), FEA (ANSYS Workbench).</p>
+          <p><strong>Impact:</strong> Eliminated the need for external assistance.</p>
+          <div class="skills-tags">
+            <span class="skill-tag">3D CAD (SolidWorks)</span>
+            <span class="skill-tag">Siemens NX</span>
+            <span class="skill-tag">FEA (ANSYS Workbench)</span>
+          </div>
         </div>
       </div>
       </div>
 
       <div class="card blue">
-        <img src="images/FSW-IITKGP.jpg" alt="Project Image">
-  <img src="images/iitkgp.jpg" alt="Project Image 2">
+        <div class="image-container">
+          <img src="images/FSW-IITKGP.jpg" alt="Project Image">
+          <img src="images/iitkgp.jpg" alt="Project Image 2">
+        </div>
         <div class="card-content">
         <div class="card-content">
           <div class="project-title">
@@ -241,25 +570,35 @@
           </div>
           <p><strong>Guide:</strong> <a href="https://scholar.google.com/citations?user=rj8w-HgAAAAJ&hl=en">
             Prof.Surjya Kanta Pal</a>, Department of Mechanical Engineering, IIT Kharagpur.</p>
-            <p><strong>Impact:</strong> Achieved 97.7% accuracy in predicting the corrosion resistance of AA1100 during Friction Stir Processing (FSP).
-              <br><strong>Skills:</strong> COMSOL Multiphysics, Welding Processes, Thermodynamics.</p>
+            <p><strong>Impact:</strong> Achieved 97.7% accuracy in predicting the corrosion resistance of AA1100 during Friction Stir Processing (FSP).<br>
+            <div class="skills-tags">
+              <span class="skill-tag">COMSOL Multiphysics</span>
+              <span class="skill-tag">Welding Processes</span>
+              <span class="skill-tag">Thermodynamics</span>
+            </div></p>
         </div>
       </div>
       </div>   
       
       <div class="card blue">
-        <img src="images/T-Rex.jpg" alt="Project Image">
+        <div class="image-container">
+          <img src="images/T-Rex.jpg" alt="ReBAM Project Image">
+        </div>
         <div class="card-content">
           <div class="project-title">
             Retractable Berth Accessibility Mechanism
             <span style="font-weight: normal;">(Design Club Project)</span>
           </div>
           <div class="section"><em>August 2019 - December 2019</em></div>
-          <p>
-            <a href="data/ReBAM .pdf">Report</a>
-          </p>
-          <p><strong>Impact:</strong> Reduced material consumption by 22%; lowered stress levels to 13%.
-            <br><strong>Skills:</strong> SolidWorks, ANSYS Workbench, Fabrication, Ergonomics.</p>
+          <p><strong>Impact:</strong> Reduced material consumption by 22%; lowered stress levels to 13%.</p>
+          <div class="skills-tags">
+            <span class="skill-tag">SolidWorks</span>
+            <span class="skill-tag">ANSYS Workbench</span>
+            <span class="skill-tag">Fabrication</span>
+            <span class="skill-tag">Ergonomics</span>
+            <span class="skill-tag">Design Optimization</span>
+            <span class="skill-tag">Stress Analysis</span>
+          </div>
         </div>
       </div>
       </div>   
@@ -277,8 +616,10 @@
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         
         <div class="card green">
-          <img src="images/Walking cane.jpg" alt="Project Image">
-  <img src="images/icord.png" alt="Project Image 2">
+          <div class="image-container">
+            <img src="images/Walking cane.jpg" alt="Walking Cane Project Image">
+            <img src="images/icord.png" alt="ICoRD Conference Logo">
+          </div>
           <div class="card-content">
             <div class="project-title">Design and Development of Ergonomic and Customizable Walking Cane</div>
             <a href="https://doi.org/10.1007/978-981-99-0264-4_5">Paper</a> / <a href="data/Poster.pptx.pdf">Poster</a>
@@ -289,9 +630,11 @@
         </div>
     
         <div class="card green">
-          <img src="images/ReBAM.jpg" alt="Project Image">
-  <img src="images/ICRoM.png" alt="Project Image 2">
-        <div class="card-content">
+          <div class="image-container">
+            <img src="images/ReBAM.jpg" alt="Borewell Rescue Device Image">
+            <img src="images/ICRoM.png" alt="ICRoM Conference Logo">
+          </div>
+          <div class="card-content">
             <div class="project-title">Conceptual model for improving maneuverability in borewell rescue devices</div>
             <a href="10.1109/ICRoM54204.2021.9663477">Paper</a> / <a href="data/Poster-2.pdf">Poster</a>
             <div class="section">Adithya Kameswara Rao, Harikrishna K, <strong>Jayendran R</strong>, Meenatchi L S, Sudarsana Jayandan J, Niranjan Kumar P
@@ -301,9 +644,11 @@
         </div>
     
         <div class="card green">
-          <img src="images/Tap.jpeg" alt="Project Image">
-  <img src="images/ipdims.jpeg" alt="Project Image 2">
-        <div class="card-content">
+          <div class="image-container">
+            <img src="images/Tap.jpeg" alt="Water Conservation Faucet Image">
+            <img src="images/ipdims.jpeg" alt="IPDIMS Conference Logo">
+          </div>
+          <div class="card-content">
             <div class="project-title">Novel Water-Conserving Faucet Attachment</div>
             <a href="https://doi.org/10.1007/978-981-19-0296-3_18">Paper</a> 
             <div class="section">Adithya Kameswara Rao, Harikrishna K, <strong>Jayendran R</strong>, Sudarsana Jayandan J, Niranjan Kumar P, Saimothish R
@@ -322,25 +667,41 @@
   <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     
     <div class="card teal">
-      <img src="images/RFID_Implementation.png" alt="Project Image">
+      <img src="images/RFID_Implementation.png" alt="RFID Project Image">
       <div class="card-content">
         <div class="project-title">RFID Implementation for Medical Inventory Tracking</div>
         <div class="section"><em>January 2025 - April 2025</em></div>
-        <a href="data/Implementing RFID for Medical Inventory Tracking at Purdue University Hospital - Group 5A.pdf">Presentation</a> / 
-        <a href="https://www.figma.com/board/XKLx62p2IzrAPFe95c7tEH/PM-Group-5?node-id=0-1&t=hOz1zsEu37GWuR2a-1">Figma</a></p>
-        <p><strong>Takeaways:</strong> Anticipate uncertainties (layoffs, increased costs) and prepare countermeasures in advance.
-          <br><span style="font-weight: bold;">Skills:</span> Project Management, Gantt chart, 
-          MS Project, Figma, Critical Path Method(CPM), Budgeting, Scheduling, Resource Allocation.</p>
+        <p><strong>Takeaways:</strong> Anticipate uncertainties (layoffs, increased costs) and prepare countermeasures in advance.</p>
+        <div class="skills-tags">
+          <span class="skill-tag">Project Management</span>
+          <span class="skill-tag">Gantt Chart</span>
+          <span class="skill-tag">MS Project</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Critical Path Method</span>
+          <span class="skill-tag">Budgeting</span>
+          <span class="skill-tag">Resource Allocation</span>
+        </div>
       </div>
     </div>
 
     <div class="card teal">
-      <img src="data/dashboard.jpg" alt="Project Image">
+      <div class="image-container">
+        <img src="data/dashboard.jpg" alt="WEF Dashboard Image">
+      </div>
       <div class="card-content">
         <div class="project-title">WEF Travel & Tourism Development Index 2024 Dashboard</div>
         <a href="https://public.tableau.com/app/profile/jayendran.r/viz/WEFsTravelTourismDevelopmentIndex/TTDI">Tableau</a>
-        <p><span style="font-weight: bold;">Takeaways:</span> Ensure the data's reliability through data cleaning, scaling, and validation.
-          <br><span style="font-weight: bold;">Skills:</span> Tableau, Excel VBA, Data visualization.</p>
+        <p><span style="font-weight: bold;">Takeaways:</span> Ensure the data's reliability through data cleaning, scaling, and validation.</p>
+        <div class="skills-tags">
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Data Visualization</span>
+          <span class="skill-tag">Data Cleaning</span>
+          <span class="skill-tag">Data Analysis</span>
+          <span class="skill-tag">Dashboard Design</span>
+          <span class="skill-tag">Excel VBA</span>
+          <span class="skill-tag">Data Validation</span>
+          <span class="skill-tag">KPI Tracking</span>
+        </div>
       </div>
     </div>
 
@@ -353,19 +714,33 @@
           <p>Reference Paper: <a href="http://dx.doi.org/10.1108/17410381011077973"><em>S. Vinodh K.R. Arvind M. Somanaathan, (2010),"Application of value stream mapping in an Indian camshaft
             manufacturing organisation", Journal of Manufacturing Technology Management, Vol. 21 Iss 7 pp. 888 - 900</em></a></p>
           <p><span style="font-weight: bold;">Takeaways:</span> Foster cross-functional alignment and shared understanding through VSM.
-            <br><span style="font-weight: bold;">Skills:</span> Value Stream Mapping (VSM), Lean manufacturing, 5S, Visio.</p>
+            <br><span style="font-weight: bold;">Skills:</span> Value Stream Mapping (VSM), Lean manufacturing, 5S, Visio.
+            <div class="skills-tags">
+              <span class="skill-tag">Value Stream Mapping</span>
+              <span class="skill-tag">Lean Manufacturing</span>
+              <span class="skill-tag">5S</span>
+              <span class="skill-tag">Visio</span>
+            </div></p>
         </div>
       </div>
 
       <div class="card teal">
-        <img src="images/Shastra.PNG" alt="Project Image 1">
-  <img src="images/Cat.png" alt="Project Image 2">
+        <div class="image-container">
+          <img src="images/Shastra.PNG" alt="Shastra Competition Image">
+          <img src="images/Cat.png" alt="Caterpillar Logo">
+        </div>
         <div class="card-content">
           <div class="project-title">Small scale LFG collection system</div>
-          <div class="section"><span>&#x1F3C6;</span>Secured 2nd position in <span>Caterpillar IDP Challenge</span>, <a href="https://www.iitm.ac.in/">IIT Madras</a>.</div>
-          <a href="data/Caterpillar 1.pdf">Report</a>
-          <p><span style="font-weight: bold;">Takeaways:</span> Analyse and validate the feasibility of a solution before proposal/implementation.<br>
-            <span style="font-weight: bold;">Skills:</span> Autodesk Fusion 360, ANSYS Fluent, Business case development.</p>
+          <div class="section"><span>&#x1F3C6;</span>Secured 2nd position in <span>Caterpillar IDP Challenge</span>, IIT Madras.</div>
+          <p><strong>Takeaways:</strong> Analyse and validate the feasibility of a solution before proposal/implementation.</p>
+          <div class="skills-tags">
+            <span class="skill-tag">Autodesk Fusion 360</span>
+            <span class="skill-tag">ANSYS Fluent</span>
+            <span class="skill-tag">CFD Analysis</span>
+            <span class="skill-tag">Business Case Development</span>
+            <span class="skill-tag">Feasibility Analysis</span>
+            <span class="skill-tag">Project Planning</span>
+          </div>
         </div>
       </div>
 
@@ -379,27 +754,39 @@
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         
         <div class="card purple">
-          <img src="images/nittsac.png" alt="Project Image">
+          <img src="images/nittsac.png" alt="NITTSAC Logo">
           <div class="card-content">
-            <div class="project-title">Chair of Communications<span style="font-weight: normal;">, <a href="https://www.linkedin.com/company/nitt-sac/?originalSubdomain=in">NIT Trichy Student-alumni cell (NITTSAC)</a></span></div>
+            <div class="project-title">Chair of Communications<span style="font-weight: normal;">, NITTSAC</span></div>
             <div class="section"><em>July 2021 - June 2022</em></div>
-            <p><strong>Impact:</strong> Spearheaded 5+ student-alumni engagement events (with 100+ footfalls) focusing on different industries.<br>
-            <strong>Skills:</strong> Event management, Content management, Networking.</p>
+            <p><strong>Impact:</strong> Spearheaded 5+ student-alumni engagement events (with 100+ footfalls) focusing on different industries.</p>
+            <div class="skills-tags">
+              <span class="skill-tag">Event Management</span>
+              <span class="skill-tag">Content Management</span>
+              <span class="skill-tag">Networking</span>
+              <span class="skill-tag">Leadership</span>
+              <span class="skill-tag">Team Coordination</span>
+            </div>
            </div>
         </div>
 
         <div class="card purple">
-          <img src="images/tm.jpeg" alt="Project Image">
+          <img src="images/tm.jpeg" alt="Toastmasters Logo">
           <div class="card-content">
-            <div class="project-title">Assistant Area Director, <span style="font-weight: normal;"><a href="https://meetingstminitt.wixsite.com/toastmastersnitt">Toastmasters NIT-T</a></span></div>
+            <div class="project-title">Assistant Area Director, Toastmasters NIT-T</div>
             <div class="section"><em>July 2021 - June 2022</em></div>
-            <div class="section"><span>&#x1F3C6;</span>Outstanding Toastmasters, District F <em>(March 2022).</em><br>
-              <span>&#x1F3C6;</span>Triple Crown Award<em> (June 2022).</em><br>
-            <span>&#x1F3C6;</span><a href="data/Pathways.pdf">Certificate of Proficiency - Dynamic Leadership Pathways</a> 
-            <em>(June 2022).</em>
-                  </div>
-            <p><strong>Impact:</strong> Organized workshops, demo meets and induction, successfully onboarding 10 members.<br>
-            <strong>Skills:</strong> Leadership, Organizational skills, Interpersonal communication.</p>
+            <div class="section">
+              <span>&#x1F3C6;</span>Outstanding Toastmasters, District F <em>(March 2022)</em><br>
+              <span>&#x1F3C6;</span>Triple Crown Award<em> (June 2022)</em><br>
+              <span>&#x1F3C6;</span>Certificate of Proficiency - Dynamic Leadership Pathways <em>(June 2022)</em>
+            </div>
+            <p><strong>Impact:</strong> Organized workshops, demo meets and induction, successfully onboarding 10 members.</p>
+            <div class="skills-tags">
+              <span class="skill-tag">Leadership</span>
+              <span class="skill-tag">Public Speaking</span>
+              <span class="skill-tag">Event Organization</span>
+              <span class="skill-tag">Member Development</span>
+              <span class="skill-tag">Communication</span>
+            </div>
            </div>
         </div>
 
@@ -414,13 +801,23 @@
                 <li>Area ISC & TT Chief Judge, Colossus Toastmasters. <em>(March 2022)</em></li>
                 <li><a href="data/TMI NITT Newsletter Dec'21.pdf">Newsletter Chair</a>, Toastmasters NIT-T. <em>(December 2022)</em></li>
                 <li><a href="data/OTP Trainer.pdf">Trainer</a> (SAA), Officers Training Program, Toastmasters International. <em>(September 2022)</em></li>
-                <li>Project Mentor, Designers' Consortium. <em>(January 2021 - March 2021)</em><br>
-                <li>Trainer (Machine Design), Techathlon Design Workshop, Designers' Consortium. (February 2020)</li>
+                <li>Project Mentor, Designers' Consortium. <em>(January 2021 - March 2021)</em></li>
+                <li>Trainer (Machine Design), Techathlon Design Workshop, Designers' Consortium. <em>(February 2020)</em></li>
                 <span>&#x1F3C6;</span>Secured 2nd position in ATMakeathon, <a href="https://r2d2.iitm.ac.in/">R2D2</a>, IIT Madras.</li>
-                <li>Sergeant at Arms (SAA), Toastmasters NIT-T. <em>(July 2019 - June 2022)</em></li>
               </ul>
             </p>
-            <p><strong>Skills:</strong> Presentation skills, Critical thinking, Canva, Mentoring, Training.</p></p>
+            <div class="skills-tags">
+              <span class="skill-tag">Grant Review</span>
+              <span class="skill-tag">Event Management</span>
+              <span class="skill-tag">Contest Organization</span>
+              <span class="skill-tag">Content Creation</span>
+              <span class="skill-tag">Leadership Training</span>
+              <span class="skill-tag">Mentoring</span>
+              <span class="skill-tag">Technical Training</span>
+              <span class="skill-tag">Project Management</span>
+              <span class="skill-tag">Public Speaking</span>
+              <span class="skill-tag">Team Coordination</span>
+            </div>
           </td>
         </tr>
       </tbody></table>
@@ -447,7 +844,7 @@
                 Job design <em>(Graduate)</em><br>
               Economic decisions in engineering <em>(Graduate)</em><br>
               Risk analysis methods and applications <em>(Graduate)</em><br>
-                <a href="https://www.coursera.org/account/accomplishments/verify/HRWL522XFJWE?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course">
+                <a href="https://www.coursera.org/account/accomplishments/verify/HRWL522XFJWE?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta">
                       The hidden value - Lean in manufacturing and services</a> <em>(Coursera)</em>
               </td>
             </tr>
@@ -605,9 +1002,10 @@
                 <tr>
                   <td style="padding:0px">
                     <br>
-                    <p style="text-align:right;font-size:small;">
-                      Template Credits: <a href="https://jonbarron.info/">jonbarron.info</a>.
-                    </p>
+                    <div class="footer" style="text-align:center;font-size:small;padding:20px 0;border-top:1px solid rgba(0,0,0,0.1);margin-top:20px;">
+                      © Jayendran Ravindran 2025 | Template Credits: <a href="https://jonbarron.info/">jonbarron.info</a> | 
+                      Powered by <a href="https://cursor.sh/">Cursor</a>
+                    </div>
                   </td>
                 </tr>
               </tbody></table>
